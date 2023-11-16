@@ -2,11 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
-import venv
 
 # Cargar los datos
-ratings = pd.read_csv("datos/ratings.csv")  # Asegúrate de tener el archivo correcto
-movies = pd.read_csv("datos/movies.csv")  # Asegúrate de tener el archivo correcto
+ratings = pd.read_csv("datos\ratings.csv") 
+movies = pd.read_csv("datos\movies.csv")  
 
 # Limpieza y preparación de datos
 ratings = ratings.drop(columns=['timestamp'])
