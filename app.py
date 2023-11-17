@@ -18,7 +18,7 @@ matriz = df.pivot_table(values='rating', index='userId', columns='title', fill_v
 X = matriz.T
 
 # Aplicar SVD
-num_sv = 7
+num_sv = 10
 SVD = TruncatedSVD(n_components=num_sv, random_state=42)
 resultant_matrix = SVD.fit_transform(X)
 
