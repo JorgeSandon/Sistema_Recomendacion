@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 from sklearn.decomposition import TruncatedSVD
 import numpy as np
+from PIL import Image
+import os
 
 # Carga y Limpieza de datos
 movies = pd.read_csv("datos/movies.csv")
@@ -27,6 +29,12 @@ corrMtx = np.corrcoef(resultant_matrix)
 
 # Crear la aplicación de Streamlit
 st.title("Sistema de Recomendación de Películas")
+
+# Añadir una imagen debajo del título
+
+image_path = os.path.join("img", "banner.png")
+image = Image.open(image_path)
+st.image(image, caption='Imagen ilustrativa', use_column_width=True)
 
 # Selección de película
 liked = st.selectbox("Selecciona una película que te guste:", matriz.columns)
